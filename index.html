@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sportify Everyone | Camp Exchange USA — Pakistan</title>
+  <meta name="description" content="Sportify Everyone is Pakistan's official CIEE representative for Camp Exchange USA programs." />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Flag JS early so reveal styles apply before first paint (no flash) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="images/logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Page loader: fades out once the page has loaded -->
+  <div class="loader" aria-hidden="true">
+    <img src="images/logo-light.png" alt="" class="loader-logo" />
+    <span class="loader-bar"></span>
+  </div>
+
+  <!-- =========================================================
+       1. NAVBAR
+       ========================================================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Sportify Everyone home">
+        <img src="images/logo-light.png" alt="Sportify Everyone" />
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button type="button" class="btn-apply btn-apply--sm nav-mobile-cta js-apply-trigger">Apply Now</button>
+      </nav>
+
+      <button type="button" class="btn-apply btn-apply--sm nav-cta js-apply-trigger">Apply Now</button>
+
+      <!-- Mobile menu toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================
+         2. HERO
+         ========================================================= -->
+    <section class="hero" id="home">
+      <!-- Background lives on its own layer so it can parallax with transform -->
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+      <span class="hero-watermark" id="heroWatermark" aria-hidden="true">SPORTIFY</span>
+
+      <div class="container hero-content" id="heroContent">
+        <!-- Floating glass card: wrapper floats, inner card tilts -->
+        <div class="hero-card-wrap">
+          <div class="hero-card" id="heroCard">
+            <span class="hero-card-glare" aria-hidden="true"></span>
+            <div class="hero-card-body">
+              <p class="hero-card-label">Featured Program</p>
+              <h3 class="hero-card-title">Camp Counselor Program</h3>
+              <button type="button" class="hero-card-apply btn-apply js-apply-trigger">Apply Now</button>
+              <p class="hero-card-rating">4.9 <span>★★★★★</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom" id="heroBottom">
+          <!-- Headline block (bottom left) -->
+          <div class="hero-text">
+            <h1 class="split-words">Your Journey to America Starts Here</h1>
+            <p class="hero-sub load-in" style="--d: 700ms">Pakistan's official CIEE representative for Camp Exchange USA programs</p>
+            <div class="hero-buttons load-in" style="--d: 850ms">
+              <button type="button" class="btn-apply js-apply-trigger">Apply Now</button>
+              <a href="#programs" class="btn btn-outline btn-lg">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Stats widget (bottom right) -->
+          <div class="hero-widget load-in" style="--d: 1000ms">
+            <div>
+              <strong><span class="count" data-target="500">500</span>+</strong>
+              <span>Students Placed</span>
+            </div>
+            <div class="widget-divider"></div>
+            <div>
+              <strong><span class="count" data-target="5">5</span>+</strong>
+              <span>Years Experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <a href="#stats" class="scroll-cue load-in" style="--d: 1200ms" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- =========================================================
+         3. STATS BAR
+         ========================================================= -->
+    <section class="stats" id="stats">
+      <div class="container stats-grid">
+        <div class="stat fade-in">
+          <strong><span class="count" data-target="500">500</span>+</strong>
+          <span>Students Placed</span>
+        </div>
+        <div class="stat fade-in">
+          <strong><span class="count" data-target="300">300</span>+</strong>
+          <span>Partner Camps</span>
+        </div>
+        <div class="stat fade-in">
+          <strong><span class="count" data-target="0.1" data-decimals="1">0.1</span>%</strong>
+          <span>Visa Refusal Rate</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. PROGRAMS
+         ========================================================= -->
+    <section class="section programs" id="programs">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow fade-in">What we offer</p>
+          <h2 class="heading fade-in">Our Programs</h2>
+        </div>
+      </div>
+
+      <!-- Grid on desktop (3 + 2 centred), swipeable slider on mobile -->
+      <div class="container programs-wrap">
+        <!--
+          PROGRAM PHOTOS: drop the real photo for each card at
+          images/programs/<name>.jpg — camp-exchange, work-travel,
+          study-europe, team-travels, visa. Each card's .card-bg div
+          layers that file over the current placeholder photo, so
+          nothing breaks and nothing needs to change here once the
+          real file exists; it just starts showing on top.
+        -->
+        <div class="programs-grid" id="programsGrid">
+          <!-- Card 1 -->
+          <article class="program-card fade-in">
+            <div class="card-bg" style="background-image: url('images/programs/camp-exchange.jpg'), url('images/sportify-pics/hockey2.jpeg');" aria-hidden="true"></div>
+            <span class="badge badge-lime">Most Popular</span>
+            <div class="program-icon">
+              <!-- Tent icon -->
+              <svg viewBox="0 0 24 24"><path d="M3 20 12 4l9 16M8.5 20 12 13l3.5 7M2 20h20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="card-content">
+              <h3>Camp Exchange USA</h3>
+              <p>Spend your summer at an American camp.</p>
+              <button type="button" class="btn-apply js-apply-trigger">Learn More</button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="program-card is-soon fade-in">
+            <div class="card-bg" style="background-image: url('images/programs/work-travel.jpg'), url('images/sportify-pics/camp-photo-1.jpeg');" aria-hidden="true"></div>
+            <span class="badge badge-soon">Coming Soon</span>
+            <div class="program-icon">
+              <!-- Globe icon -->
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="card-content">
+              <h3>Work &amp; Travel USA</h3>
+              <p>Work, earn and explore America.</p>
+              <button type="button" class="btn-apply js-apply-trigger">Learn More</button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="program-card is-soon fade-in">
+            <div class="card-bg" style="background-image: url('images/programs/study-europe.jpg'), url('images/sportify-pics/people2.jpeg');" aria-hidden="true"></div>
+            <span class="badge badge-soon">Coming Soon</span>
+            <div class="program-icon">
+              <!-- Graduation cap icon -->
+              <svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 11v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5M22 9v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="card-content">
+              <h3>Study in Europe</h3>
+              <p>Study abroad in Europe.</p>
+              <button type="button" class="btn-apply js-apply-trigger">Learn More</button>
+            </div>
+          </article>
+
+          <!-- Card 4 — active, not "coming soon" -->
+          <article class="program-card fade-in">
+            <div class="card-bg" style="background-image: url('images/programs/team-travels.jpg'), url('images/sportify-pics/hockey3.jpeg');" aria-hidden="true"></div>
+            <div class="program-icon">
+              <!-- Team icon -->
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6M18 14.4c1.8.9 3 2.8 3 5.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="card-content">
+              <h3>Team Travels</h3>
+              <p>Team travel programs.</p>
+              <button type="button" class="btn-apply js-apply-trigger">Learn More</button>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="program-card is-soon fade-in">
+            <div class="card-bg" style="background-image: url('images/programs/visa.jpg'), url('images/sportify-pics/ciee.jpeg'); background-position: 62% 0%;" aria-hidden="true"></div>
+            <span class="badge badge-soon">Coming Soon</span>
+            <div class="program-icon">
+              <!-- Passport icon -->
+              <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="card-content">
+              <h3>Visa Assistance</h3>
+              <p>Support with your visa process.</p>
+              <button type="button" class="btn-apply js-apply-trigger">Learn More</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Slider dots (mobile only, built by script.js) -->
+        <div class="slider-dots" id="sliderDots" role="tablist" aria-label="Program slides"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4a. CAMP TYPES
+         ========================================================= -->
+    <section class="section camp-types">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading fade-in">Types of Camps</h2>
+        </div>
+
+        <!--
+          CAMP TYPE PHOTOS: drop the real photo for each card at
+          images/camp-types/<name>.jpg — traditional, sports, city,
+          special-needs. Each card's .camp-card-bg div layers that
+          file over the current placeholder photo, so nothing breaks
+          and nothing needs to change here once the real file exists.
+        -->
+        <div class="camp-types-grid">
+          <a href="#contact" class="camp-card fade-in">
+            <div class="camp-card-bg" style="background-image: url('images/camp-types/traditional.jpg'), url('images/sportify-pics/archery.jpeg');" aria-hidden="true"></div>
+            <span class="camp-card-title">Traditional Camps</span>
+          </a>
+          <a href="#contact" class="camp-card fade-in">
+            <div class="camp-card-bg" style="background-image: url('images/camp-types/sports.jpg'), url('images/sportify-pics/cricket.jpeg');" aria-hidden="true"></div>
+            <span class="camp-card-title">Sports-Based Camps</span>
+          </a>
+          <a href="#contact" class="camp-card fade-in">
+            <div class="camp-card-bg" style="background-image: url('images/camp-types/city.jpg'), url('images/sportify-pics/tennis-2.jpeg');" aria-hidden="true"></div>
+            <span class="camp-card-title">City Camps</span>
+          </a>
+          <a href="#contact" class="camp-card fade-in">
+            <div class="camp-card-bg" style="background-image: url('images/camp-types/special-needs.jpg'), url('images/sportify-pics/tugofwar.jpeg');" aria-hidden="true"></div>
+            <span class="camp-card-title">Special Needs Camps</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4b. PROGRAM HIGHLIGHTS
+         ========================================================= -->
+    <section class="section highlights">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading highlights-heading fade-in">Not just a job. Your <span class="marker-highlight">best summer yet</span>.</h2>
+        </div>
+
+        <div class="highlights-grid">
+          <div class="highlight-card fade-in slide-right">
+            <div class="highlight-icon">
+              <!-- Trees / outdoors icon -->
+              <svg viewBox="0 0 24 24"><path d="M12 2 7 10h2.5L6 17h5v5h2v-5h5l-3.5-7H17L12 2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>8–10 Weeks Outdoors</h3>
+            <p>Spend your summer at American camps surrounded by lakes, forests and mountains.</p>
+          </div>
+
+          <div class="highlight-card fade-in slide-right">
+            <div class="highlight-icon">
+              <!-- Briefcase icon -->
+              <svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Gain US Work Experience</h3>
+            <p>Build leadership, mentoring and coaching skills that boost your resume.</p>
+          </div>
+
+          <div class="highlight-card fade-in slide-right">
+            <div class="highlight-icon">
+              <!-- Suitcase / travel icon -->
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v18M3 12h18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>30 Days Travel After Camp</h3>
+            <p>Explore America for up to 30 days after your camp experience ends.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4c. ACTIVITIES (marquee)
+         ========================================================= -->
+    <section class="section activities" id="activities">
+      <div class="container section-head">
+        <p class="eyebrow fade-in">Your Summer</p>
+        <h2 class="heading fade-in">Your Summer Activities</h2>
+        <p class="activities-sub fade-in">Spend the summer with American kids, alongside staff from countries all over the world.</p>
+      </div>
+
+      <!--
+        Every activity below now has a matching photo, so all of
+        them render as polaroid cards — the lime pill style still
+        exists in style.css for any future activity added without
+        a photo yet.
+      -->
+      <div class="marquee-rows">
+        <!-- Row 1: scrolls left -->
+        <div class="marquee activities-track">
+          <div class="marquee-track">
+            <figure class="polaroid"><img src="images/sportify-pics/soccer.jpeg" alt="Kids playing football at camp" loading="lazy" /><figcaption>Football</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/baseball.jpeg" alt="Camp baseball practice" loading="lazy" /><figcaption>Baseball</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/hockey.jpeg" alt="Counselor coaching floor hockey" loading="lazy" /><figcaption>Hockey</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/cricket.jpeg" alt="Cricket at camp" loading="lazy" /><figcaption>Cricket</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/swimming.jpg" alt="Swimming lesson at camp" loading="lazy" /><figcaption>Swimming</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/basketball.jpg" alt="Basketball at camp" loading="lazy" /><figcaption>Basketball</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/tennis.jpeg" alt="Tennis lesson on the camp courts" loading="lazy" /><figcaption>Tennis</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/archery.jpeg" alt="Archery lesson at camp" loading="lazy" /><figcaption>Archery</figcaption></figure>
+          </div>
+        </div>
+
+        <!-- Row 2: scrolls right (opposite direction) -->
+        <div class="marquee activities-track">
+          <div class="marquee-track">
+            <figure class="polaroid"><img src="images/sportify-pics/volleyball.jpeg" alt="Beach volleyball at a lakeside camp" loading="lazy" /><figcaption>Volleyball</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/arts-and-craft.jpg" alt="Arts and crafts at camp" loading="lazy" /><figcaption>Arts &amp; Crafts</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/music.jpg" alt="Music session at camp" loading="lazy" /><figcaption>Music</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/dance.jpg" alt="Dance activity at camp" loading="lazy" /><figcaption>Dance</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/rock-climbing.jpg" alt="Rock climbing at camp" loading="lazy" /><figcaption>Rock Climbing</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/kayaking.jpg" alt="Kayaking at camp" loading="lazy" /><figcaption>Kayaking</figcaption></figure>
+            <figure class="polaroid"><img src="images/sportify-pics/nature-and-science.jpg" alt="Nature and science activity at camp" loading="lazy" /><figcaption>Nature &amp; Science</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. HOW IT WORKS
+         ========================================================= -->
+    <section class="section how" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow fade-in">Application Process</p>
+          <h2 class="heading fade-in">Your Journey in 6 Steps</h2>
+        </div>
+
+        <div class="timeline">
+          <ol class="timeline-list">
+            <li class="timeline-step fade-in">
+              <span class="timeline-num">1</span>
+              <div class="timeline-card">
+                <h3>Get in Touch</h3>
+                <p>Contact our team and start your application.</p>
+              </div>
+            </li>
+            <li class="timeline-step fade-in">
+              <span class="timeline-num">2</span>
+              <div class="timeline-card">
+                <h3>Complete your application &amp; Stage 1 interview</h3>
+                <p>Complete your form and interview with our team.</p>
+              </div>
+            </li>
+            <li class="timeline-step fade-in">
+              <span class="timeline-num">3</span>
+              <div class="timeline-card">
+                <h3>Documentation &amp; placement</h3>
+                <p>Submit your documents and we match you with camps.</p>
+              </div>
+            </li>
+            <li class="timeline-step fade-in">
+              <span class="timeline-num">4</span>
+              <div class="timeline-card">
+                <h3>Stage 2 interview</h3>
+                <p>Camp interviews until you are placed.</p>
+              </div>
+            </li>
+            <li class="timeline-step fade-in">
+              <span class="timeline-num">5</span>
+              <div class="timeline-card">
+                <h3>Book appointment</h3>
+                <p>Sponsorship documentation &amp; book your appointment.</p>
+              </div>
+            </li>
+            <li class="timeline-step fade-in">
+              <span class="timeline-num timeline-num--icon" aria-label="Step 6">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 11.5 20 4l-6.2 16.7-3-7.4L3 11.5Z"/></svg>
+              </span>
+              <div class="timeline-card">
+                <h3>Fly to America</h3>
+                <p>Start your camp journey.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. WHY CHOOSE US
+         ========================================================= -->
+    <section class="section why" id="about">
+      <div class="container why-layout">
+        <!-- Photo collage -->
+        <div class="why-media fade-in">
+          <img class="why-img-main" src="images/sportify-pics/people.jpeg" alt="Sportify Everyone participant with CIEE staff at camp" loading="lazy" />
+          <img class="why-img-small" src="images/sportify-pics/zipline2.jpeg" alt="Camp counselor on the zipline course" loading="lazy" />
+          <div class="why-chip">
+            <strong><span class="count" data-target="500">500</span>+</strong>
+            <span>students placed</span>
+          </div>
+        </div>
+
+        <div class="why-content">
+          <div class="section-head section-head-left">
+            <p class="eyebrow fade-in">Why Sportify Everyone</p>
+            <h2 class="heading fade-in">Why Choose Us</h2>
+          </div>
+
+          <div class="why-list">
+            <div class="why-item fade-in">
+              <div class="why-icon why-check">
+                <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>300+ Partner Camps</h3>
+                <p>Across the USA, so you get matched with the camp that fits you best.</p>
+              </div>
+            </div>
+            <div class="why-item fade-in">
+              <div class="why-icon why-check">
+                <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>1-on-1 Personal Support</h3>
+                <p>A dedicated advisor guides you through every step of your application.</p>
+              </div>
+            </div>
+            <div class="why-item fade-in">
+              <div class="why-icon why-check">
+                <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Competitive Salaries</h3>
+                <p>Starting from $2,400+, paid directly by your host camp in the USA.</p>
+              </div>
+            </div>
+            <div class="why-item fade-in">
+              <div class="why-icon why-check">
+                <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>No Hidden Fees</h3>
+                <p>Fully transparent pricing — you know exactly what you're paying for, upfront.</p>
+              </div>
+            </div>
+            <div class="why-item fade-in">
+              <div class="why-icon why-check">
+                <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3>Guaranteed Placement</h3>
+                <p>For successful applicants — apply with confidence, not uncertainty.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. TESTIMONIALS (auto-rotating)
+         ========================================================= -->
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow fade-in">What Participants Say</p>
+          <h2 class="heading fade-in">Testimonials</h2>
+        </div>
+
+        <div class="testimonial-wrap fade-in">
+          <button type="button" class="testimonial-nav testimonial-prev" id="testimonialPrev" aria-label="Previous testimonial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6 9 12l6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="testimonial-slider" id="testimonialSlider">
+          <figure class="testimonial-slide is-active is-long">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              At first, traveling abroad felt like a barrier, especially as a girl — it's not always easy to convince parents or feel secure. But the camp's environment changed everything for me. It was safe, supportive, and so empowering. What helped most was hearing from returners and seeing how the experience shaped them. It gave my parents confidence and completely shifted my own perspective. I came back stronger, more confident, and with a whole new outlook on what's possible.
+            </blockquote>
+            <figcaption>
+              <strong>Marium</strong>
+              <span>Pakistan</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-slide is-long">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              This camp is the best opportunity for Pakistani youth to explore, learn, and grow. We don't usually get to experience this kind of open, positive, and encouraging environment back home. It helped me step out of my comfort zone, meet amazing people, and see a new side of myself. Honestly, every young person in Pakistan should have this experience. It's life-changing.
+            </blockquote>
+            <figcaption>
+              <strong>Abdul Rafay</strong>
+              <span>Pakistan</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-slide is-long">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              This was my second year at camp, and it's been nothing short of transformational. The experience has helped shape who I am, pushing me out of my comfort zone and into real growth. I've built lasting friendships, found confidence, and discovered a space where I truly belong. I'm already looking forward to next year — this camp isn't just something I attend, it's something that's become part of me.
+            </blockquote>
+            <figcaption>
+              <strong>Maaz</strong>
+              <span>Pakistan</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-slide">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              This summer I signed up for a job. What I got instead was a home and a brand new family. I fell in love and had the summer of a lifetime.
+            </blockquote>
+            <figcaption>
+              <strong>Eilish</strong>
+              <span>Ireland</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-slide">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              Taking part in this program you will get a great life changing experience. I've grown so much as a person and discovered new things about myself.
+            </blockquote>
+            <figcaption>
+              <strong>Olena</strong>
+              <span>Ukraine</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-slide">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <blockquote>
+              An amazing experience where you get to live as a local and enjoy the best of America, surrounded by people who become your family.
+            </blockquote>
+            <figcaption>
+              <strong>Luis Enrique</strong>
+              <span>Mexico</span>
+            </figcaption>
+          </figure>
+          </div>
+
+          <button type="button" class="testimonial-nav testimonial-next" id="testimonialNext" aria-label="Next testimonial">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+
+        <div class="testimonial-dots" id="testimonialDots" role="tablist" aria-label="Testimonial slides"></div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7b. CIEE PARTNERSHIP BADGE
+         ========================================================= -->
+    <section class="ciee-badge">
+      <div class="container ciee-badge-inner fade-in">
+        <span class="accent-line" aria-hidden="true"></span>
+        <p class="eyebrow">Officially Backed By</p>
+        <div class="ciee-pill">CIEE — Council on International Educational Exchange</div>
+        <p class="ciee-sub">Founded in 1947 — America's oldest and largest nonprofit exchange organization</p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         8. CTA BANNER
+         ========================================================= -->
+    <section class="cta" id="contact">
+      <div class="container cta-inner fade-in">
+        <h2>Ready to Start Your American Adventure?</h2>
+        <button type="button" class="btn-apply btn-apply--dark js-apply-trigger">Apply Now</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       9. FOOTER
+       ========================================================= -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <a href="#home" class="nav-logo" aria-label="Sportify Everyone home">
+        <img src="images/logo-light.png" alt="Sportify Everyone" />
+      </a>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#home">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-right">
+        <p class="footer-tag"><span class="dot"></span>Turn your talent into an American summer.</p>
+
+        <!-- Social / contact icons -->
+        <ul class="footer-social" aria-label="Contact and social links">
+          <li>
+            <a href="https://www.instagram.com/ciee.pk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/19143864963" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:sportifyeveryone@gmail.com" aria-label="Email sportifyeveryone@gmail.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-mail"/></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Sportify Everyone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       APPLY NOW POPUP — every .js-apply-trigger button opens this
+       (script.js) instead of navigating anywhere. Rows are built
+       from the CONTACT config at the top of script.js.
+       ========================================================= -->
+  <div class="apply-modal" id="applyModal" hidden>
+    <div class="apply-modal-backdrop" id="applyModalBackdrop"></div>
+    <div class="apply-modal-sheet" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle" aria-describedby="applyModalDesc" tabindex="-1">
+      <span class="apply-modal-handle" aria-hidden="true"></span>
+      <button type="button" class="apply-modal-close" id="applyModalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 id="applyModalTitle">How would you like to apply?</h2>
+      <p id="applyModalDesc">Pick one. It only takes a few seconds.</p>
+      <div class="apply-modal-rows" id="applyModalRows"><!-- built by script.js --></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       FLOATING CONTACT BUTTONS (bottom right, always visible)
+       ========================================================= -->
+  <div class="float-contact">
+    <a href="mailto:sportifyeveryone@gmail.com" class="float-btn float-email" aria-label="Email us">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-mail"/></svg>
+      <span class="float-tooltip" aria-hidden="true">Email us</span>
+    </a>
+    <a href="https://wa.me/19143864963" class="float-btn float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+      <span class="float-tooltip" aria-hidden="true">Chat with us on WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Shared icon definitions (referenced with <use>) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-facebook" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.2-1.5 1.6-1.5H17V3.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H8v3.1h2.8V21h2.7Z"/>
+    </symbol>
+    <symbol id="icon-form" viewBox="0 0 24 24">
+      <rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <script src="script.js?v=5"></script>
+</body>
+</html>
