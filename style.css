@@ -782,7 +782,7 @@ html:not(.js) .heading::after { transform: scaleX(1); }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 40%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.35) 30%, transparent 55%);
 }
 
 @media (hover: hover) {
@@ -844,12 +844,14 @@ html:not(.js) .heading::after { transform: scaleX(1); }
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55), 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .card-content p {
   color: rgba(255, 255, 255, 0.78);
   font-size: 0.9rem;
   margin-bottom: 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* "Learn More" here is a small lime text link, not the solid
